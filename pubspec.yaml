@@ -1,0 +1,23 @@
+name: ios_screen_time_tools
+description: A comprehensive Flutter plugin for iOS Screen Time API integration. Manage app restrictions, monitor usage, and access screen time data.
+version: 0.0.14
+homepage: https://github.com/burakdonertas/ios_screen_time_tools
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  plugin:
+    platforms:
+      ios:
+        pluginClass: IosScreenTimePlugin 
