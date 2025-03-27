@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 class IosScreenTime {
   static const MethodChannel _channel = MethodChannel('ios_screen_time');
 
-  /// Kısıtlanacak uygulamaları seçme ekranını gösterir
   Future<String> selectAppsToDiscourage() async {
     try {
       if (!Platform.isIOS) {
@@ -35,15 +34,20 @@ class IosScreenTime {
 
   /// Ekran süresi verilerini getirir
   Future<String> getScreenTimeData() async {
+    //
+
     try {
+      //
+
       if (!Platform.isIOS) {
         return 'Bu özellik sadece iOS cihazlarda kullanılabilir.';
       }
 
       final now = DateTime.now();
+
       final oneWeekAgo = now.subtract(const Duration(days: 7));
 
-      final Map<String, dynamic>? usageData = 
+      final Map<String, dynamic>? usageData =
           await _channel.invokeMapMethod<String, dynamic>(
         'getScreenTimeData',
         {
@@ -70,4 +74,4 @@ class IosScreenTime {
       return 'Hata oluştu: $e';
     }
   }
-} 
+}

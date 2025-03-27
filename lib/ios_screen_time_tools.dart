@@ -29,7 +29,7 @@ class IosScreenTimeTools {
       final now = DateTime.now();
       final oneWeekAgo = now.subtract(const Duration(days: 7));
 
-      final Map<String, dynamic>? usageData = 
+      final Map<String, dynamic>? usageData =
           await _channel.invokeMapMethod<String, dynamic>(
         'getScreenTimeData',
         {
@@ -56,4 +56,4 @@ class IosScreenTimeTools {
       return 'Error occurred: $e';
     }
   }
-} 
+}
